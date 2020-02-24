@@ -1,0 +1,1 @@
+console.log("Asyn número 1");
