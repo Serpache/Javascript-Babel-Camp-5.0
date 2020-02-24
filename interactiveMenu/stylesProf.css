@@ -1,0 +1,291 @@
+/* ------------------ GENERALS ------------------ */
+
+body{
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.43;
+    background: #a2a2a2;
+    color: black;
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6, header ul, form label{
+    font-family: 'Bebas Neue', cursive;
+    letter-spacing: 1.5px;
+    font-weight: normal;
+}
+
+h1{
+    font-size: 36px;
+    letter-spacing: 3px;
+}
+
+h2{
+    font-size: 20px;
+}
+
+h3{
+    font-size: 14px;
+}
+
+h4{
+    font-size: 14px;
+}
+
+.button{
+    display: inline-block;
+    border-radius: 3px;
+    border: solid 2px #1c6698;
+    padding: 14px 36px; 
+    color: #1c6698;
+    background-color: #a2a2a2;
+}
+
+a.button{
+    text-decoration: none;
+}
+
+.button:hover{
+    background-color: #1c6698;
+    color: white;
+}
+
+header ul li a{
+    text-decoration: none;
+    color: #a2a2a2;
+}
+
+/* ------------------ LAYAOUT ------------------ */
+
+.wrapper{
+    padding-left: 8vw; /* *update #skills .list .skill:first-child & #skills .list::after */
+    padding-right: 8vw;
+}
+
+header, #about-me, footer, .skill{
+    background: black;
+    color: #a2a2a2;
+}
+
+section{
+    padding-top: 60px;
+    padding-bottom: 70px;
+}
+
+/* ------------------ HEADER ------------------ */
+
+header{
+    height: 64px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;}
+
+header h2{
+    letter-spacing: 1.5px;
+}
+
+header #icon-open{
+
+}
+
+header #icon-close{
+    display: none;
+}
+
+header nav{
+    display: none;
+}
+
+header ul{
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    font-size: 18px;
+}
+
+/* ------------------ MENU EXPAND ------------------ */
+
+header.nav-open nav, header.nav-open #icon-close{
+    display: block;
+}
+
+header.nav-open #icon-open{
+    display: none;
+}
+
+header.nav-open nav{
+    z-index: 5;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 444px;
+    background-color: #e7e7e7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header.nav-open #icon-close{
+    z-index: 10;
+}
+
+header.nav-open ul li{
+    margin: 40px;
+    color: #1c6698;
+    letter-spacing: 2px;
+}
+
+/* ------------------ SUMMARY ------------------ */
+
+#summary p{
+    font-size: 18px;
+}
+/* TODO fix button */
+#summary h1{
+    margin-top: 24px;
+    margin-bottom: 34px;
+}
+
+/* ------------------ ABOUT ------------------ */
+
+.videoWrapper{
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 25px;
+    height: 0;
+}
+
+.videoWrapper iframe{
+   border: none;
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+}
+
+/* ------------------ SKILLS ------------------ */
+
+#skills{
+
+}
+
+#skills .list{
+    display: flex;
+    overflow: auto;
+}
+
+#skills .list::after{ /* *update .wrapper */
+   content: "";
+   padding-right: 8vw;
+}
+
+
+#skills .list .skill{
+    min-width: 208px;
+    max-width: 208px;
+    height: 350px;
+    border-radius: 3px;
+    box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.5);
+    background-color: #000000;
+    padding: 30px 35px;
+    box-sizing: border-box;
+    margin-right: 32px;
+}
+
+#skills .list .skill:first-child{ /* *update .wrapper */
+    margin-left: 8vw;
+}
+
+#skills .list .skill:last-child{ /* para que no se añada al padding que ya aporta el after */
+    margin-right: 0;
+}
+
+#skills .list .skill h3{
+    border: solid 1px #ffffff; 
+}
+
+#skills .list .skill h4{
+    color: white;
+}
+
+#skills .list .skill ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+/* ------------------ FOOTER ------------------ */
+
+footer{
+    height: 104px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* ------------------ MEDIA QUERIES ------------------ */
+
+@media screen and (min-width: 768px) {
+
+/* ------------------ LAYAOUT ------------------ */
+
+section{
+    padding-top: 100px;
+    padding-bottom: 140px;
+}
+
+/* ------------------ HEADER ------------------ */
+
+header{
+    height: 104px;
+}
+
+header h2{
+    font-size: 20px;
+}
+
+/* ------------------ MENU DESKTOP ------------------ */
+
+header #icon-open, header #icon-close{
+    display: none;
+}
+
+header nav{
+    display: block;
+}
+
+header nav ul li{
+    display: inline-block;
+    margin-right: 40px;
+}
+
+/* ------------------ SUMMARY ------------------ */
+
+#summary p{
+    font-size: 20px;
+}
+/* TODO fix button */
+#summary h1{
+    width: 481px;
+    font-size: 80px;
+    margin: 30px auto 60px auto;
+}
+
+/* ------------------ ABOUT ------------------ */
+
+#about-me .maxBox{
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* ------------------ SKILLS ------------------ */
+
+#skills .list{
+    justify-content: center;
+}
+
+}
