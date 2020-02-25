@@ -32,12 +32,12 @@
 
     // Add your code here
 
-    function random() {
-        return Math.floor(Math.random() * names.length);
+    function random(min, max) {
+        return Math.floor(Math.random() * (max - min) + min);
     }
 
     function chooseName() {
-        return names[random()];
+        return names[random(0,2)];
     }
 
     para.append(chooseName());
