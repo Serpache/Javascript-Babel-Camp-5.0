@@ -22,11 +22,11 @@ for(let i = 1; i <= 5; ++i){
 function darken(){
     if(btn.className === "dark"){
         btn.className = "light";
-        btn.textContent = "Light";
+        btn.textContent = "Lighten";
         overlay.style.backgroundColor = 'rgba(0,0,0,0.5)';
     }else{
         btn.className = "dark";
-        btn.textContent = "Dark";
+        btn.textContent = "Darken";
         overlay.style.backgroundColor = 'rgba(0,0,0,0)';
     }
 }
